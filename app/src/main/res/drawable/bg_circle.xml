@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Círculo usado como "avatar" da categoria. A cor real é aplicada em
+     tempo de execução via setColorFilter, então aqui a cor de base
+     (branco) não importa muito: ela é totalmente substituída. -->
+<shape xmlns:android="http://schemas.android.com/res/android"
+    android:shape="oval">
+    <solid android:color="@android:color/white" />
+</shape>

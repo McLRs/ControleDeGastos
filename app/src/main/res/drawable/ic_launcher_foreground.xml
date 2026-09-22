@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Círculo branco de fundo -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,32 A22,22 0 1 1 53.99,32 Z" />
+    <!-- Símbolo de "cifrão"/adição, representando controle financeiro -->
+    <path
+        android:fillColor="#1B5E20"
+        android:pathData="M47,34 L61,34 L61,47 L74,47 L74,61 L61,61 L61,74 L47,74 L47,61 L34,61 L34,47 L47,47 Z" />
+</vector>

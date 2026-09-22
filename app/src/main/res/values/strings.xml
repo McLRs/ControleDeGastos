@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Controle de Gastos</string>
+    <string name="titulo_total_mes">Total do mês</string>
+    <string name="lista_vazia">Nenhum gasto nesta categoria</string>
+    <string name="rotulo_categoria">Categoria</string>
+    <string name="rotulo_data">Data</string>
+    <string name="rotulo_forma_pagamento">Forma de pagamento</string>
+    <string name="rotulo_observacao">Observação</string>
+    <string name="descricao_voltar">Voltar para a lista</string>
+    <string name="titulo_detalhe">Detalhe do gasto</string>
+    <string name="chip_todos">Todos</string>
+</resources>

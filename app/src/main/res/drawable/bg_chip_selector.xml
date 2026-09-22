@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fundo do "chip" de filtro de categoria. Muda de cor conforme o estado
+     "selected" da View (controlado em código pela Activity). -->
+<selector xmlns:android="http://schemas.android.com/res/android">
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="20dp" />
+            <solid android:color="@color/primary" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="20dp" />
+            <solid android:color="@color/chip_background" />
+        </shape>
+    </item>
+</selector>

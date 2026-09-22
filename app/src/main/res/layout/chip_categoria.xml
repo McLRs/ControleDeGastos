@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Componente XML reutilizável: este layout é inflado dinamicamente em
+     código (ListaGastosActivity), uma vez para cada categoria, e adicionado
+     ao container de filtros. -->
+<TextView xmlns:android="http://schemas.android.com/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/textChip"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="8dp"
+    android:background="@drawable/bg_chip_selector"
+    android:clickable="true"
+    android:focusable="true"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="8dp"
+    android:textColor="@color/chip_text_selector"
+    android:textSize="13sp"
+    tools:text="Alimentação" />

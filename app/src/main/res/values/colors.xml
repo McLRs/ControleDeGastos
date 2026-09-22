@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#1B5E20</color>
+    <color name="primary_dark">#0F3D14</color>
+    <color name="background">#F5F6F5</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="text_primary">#1A1A1A</color>
+    <color name="text_secondary">#6B6B6B</color>
+    <color name="expense_value">#C62828</color>
+    <color name="header_subtitle">#CDE8CF</color>
+    <color name="divider">#E0E0E0</color>
+
+    <color name="categoria_alimentacao">#EF6C00</color>
+    <color name="categoria_transporte">#1565C0</color>
+    <color name="categoria_moradia">#6A1B9A</color>
+    <color name="categoria_lazer">#00838F</color>
+    <color name="categoria_saude">#2E7D32</color>
+    <color name="categoria_outros">#616161</color>
+
+    <color name="chip_background">#E0E0E0</color>
+    <color name="chip_text">#333333</color>
+</resources>
