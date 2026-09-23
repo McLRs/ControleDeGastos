@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Componente reutilizável simples: uma linha divisória, incluída em telas
      via <include layout="@layout/divisor" />. -->
-<View xmlns:android="http://schemas.android.com/res/android"
+<View xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="1dp"
     android:background="@color/divider" />

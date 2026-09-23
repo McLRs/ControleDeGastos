@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- ColorStateList (fica em res/color, não em res/drawable): define a cor
      do texto do chip conforme ele está selecionado ou não. -->
-<selector xmlns:android="http://schemas.android.com/res/android">
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:color="@android:color/white" android:state_selected="true" />
     <item android:color="@color/chip_text" />
 </selector>
