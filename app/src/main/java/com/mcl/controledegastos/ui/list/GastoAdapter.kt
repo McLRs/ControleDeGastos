@@ -40,9 +40,16 @@ class GastoAdapter(
             ContextCompat.getColor(binding.root.context, gasto.categoria.corResId())
         )
         binding.textDescricao.text = gasto.descricao
-        binding.textCategoriaData.text = binding.root.context.getString(
-            R.string.formato_categoria_data, gasto.categoria.rotulo, gasto.data
-        )
+        binding.textCategoriaData.text = if (gasto.eParcelado) {
+            binding.root.context.getString(
+                R.string.formato_categoria_data_parcela,
+                gasto.categoria.rotulo, gasto.data, gasto.parcelaAtual, gasto.totalParcelas
+            )
+        } else {
+            binding.root.context.getString(
+                R.string.formato_categoria_data, gasto.categoria.rotulo, gasto.data
+            )
+        }
         binding.textValor.text = gasto.valor.paraMoeda()
 
         binding.root.setOnClickListener { aoClicarNoItem(gasto) }
@@ -50,7 +57,10 @@ class GastoAdapter(
 
     override fun getItemCount(): Int = gastos.size
 
-    /** Substitui a lista exibida (usado ao trocar o filtro de categoria). */
+    /** Retorna o [Gasto] numa posição (usado para excluir um item ao arrastá-lo). */
+    fun gastoNaPosicao(position: Int): Gasto = gastos[position]
+
+    /** Substitui a lista exibida (usado ao trocar o filtro de categoria/mês). */
     fun atualizarLista(novaLista: List<Gasto>) {
         gastos = novaLista
         notifyDataSetChanged()

@@ -3,13 +3,23 @@ package com.mcl.controledegastos.data
 import com.mcl.controledegastos.model.CategoriaGasto
 import com.mcl.controledegastos.model.FormaPagamento
 import com.mcl.controledegastos.model.Gasto
+import com.mcl.controledegastos.util.formatadorDeData
+import java.time.LocalDate
 
 /**
  * Fonte de dados simulada (mock). Nesta etapa do projeto ainda não existe
  * API nem banco de dados: a lista abaixo faz esse papel temporariamente,
  * simulando gastos reais de um mês.
+ *
+ * As datas são calculadas em relação ao dia de hoje (em vez de datas fixas)
+ * para que a tela de lista, que mostra o mês atual por padrão, sempre tenha
+ * gastos para exibir — não importa em que dia o app for aberto.
  */
 object GastoMockData {
+
+    private val hoje: LocalDate = LocalDate.now()
+
+    private fun diasAtras(dias: Long): String = formatadorDeData.format(hoje.minusDays(dias))
 
     fun listaMock(): List<Gasto> = listOf(
         Gasto(
@@ -17,7 +27,7 @@ object GastoMockData {
             descricao = "Almoço no restaurante",
             categoria = CategoriaGasto.ALIMENTACAO,
             valor = 45.90,
-            data = "20/09/2026",
+            data = diasAtras(0),
             formaPagamento = FormaPagamento.CARTAO_DEBITO
         ),
         Gasto(
@@ -25,7 +35,7 @@ object GastoMockData {
             descricao = "Uber para a faculdade",
             categoria = CategoriaGasto.TRANSPORTE,
             valor = 18.50,
-            data = "19/09/2026",
+            data = diasAtras(1),
             formaPagamento = FormaPagamento.PIX,
             observacao = "Corrida durante a chuva"
         ),
@@ -34,7 +44,7 @@ object GastoMockData {
             descricao = "Aluguel do apartamento",
             categoria = CategoriaGasto.MORADIA,
             valor = 1200.00,
-            data = "05/09/2026",
+            data = diasAtras(15),
             formaPagamento = FormaPagamento.PIX
         ),
         Gasto(
@@ -42,7 +52,7 @@ object GastoMockData {
             descricao = "Cinema com amigos",
             categoria = CategoriaGasto.LAZER,
             valor = 60.00,
-            data = "18/09/2026",
+            data = diasAtras(2),
             formaPagamento = FormaPagamento.CARTAO_CREDITO,
             observacao = "Filme + pipoca"
         ),
@@ -51,7 +61,7 @@ object GastoMockData {
             descricao = "Consulta odontológica",
             categoria = CategoriaGasto.SAUDE,
             valor = 150.00,
-            data = "15/09/2026",
+            data = diasAtras(5),
             formaPagamento = FormaPagamento.DINHEIRO
         ),
         Gasto(
@@ -59,7 +69,7 @@ object GastoMockData {
             descricao = "Supermercado da semana",
             categoria = CategoriaGasto.ALIMENTACAO,
             valor = 230.75,
-            data = "14/09/2026",
+            data = diasAtras(6),
             formaPagamento = FormaPagamento.CARTAO_DEBITO
         ),
         Gasto(
@@ -67,7 +77,7 @@ object GastoMockData {
             descricao = "Assinatura de streaming",
             categoria = CategoriaGasto.LAZER,
             valor = 39.90,
-            data = "10/09/2026",
+            data = diasAtras(10),
             formaPagamento = FormaPagamento.CARTAO_CREDITO
         ),
         Gasto(
@@ -75,7 +85,7 @@ object GastoMockData {
             descricao = "Gasolina",
             categoria = CategoriaGasto.TRANSPORTE,
             valor = 120.00,
-            data = "08/09/2026",
+            data = diasAtras(12),
             formaPagamento = FormaPagamento.DINHEIRO,
             observacao = "Tanque cheio"
         ),
@@ -84,7 +94,7 @@ object GastoMockData {
             descricao = "Farmácia",
             categoria = CategoriaGasto.SAUDE,
             valor = 54.30,
-            data = "07/09/2026",
+            data = diasAtras(13),
             formaPagamento = FormaPagamento.PIX
         ),
         Gasto(
@@ -92,8 +102,19 @@ object GastoMockData {
             descricao = "Conta de internet",
             categoria = CategoriaGasto.OUTROS,
             valor = 99.90,
-            data = "03/09/2026",
+            data = diasAtras(17),
             formaPagamento = FormaPagamento.PIX
+        ),
+        Gasto(
+            id = 11,
+            descricao = "Notebook novo",
+            categoria = CategoriaGasto.OUTROS,
+            valor = 450.00,
+            data = diasAtras(4),
+            formaPagamento = FormaPagamento.CARTAO_CREDITO,
+            observacao = "Comprado em 3x, parcela 2 de 3",
+            parcelaAtual = 2,
+            totalParcelas = 3
         )
     )
 }

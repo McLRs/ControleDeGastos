@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
     android:orientation="vertical">
 
-    <!-- Cabeçalho com nome do app e total do mês -->
+    <!-- Cabeçalho com nome do app, navegação por mês e total do mês -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,6 +24,49 @@
             android:textColor="@android:color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <!-- Navegação entre meses: as parcelas de uma compra parcelada caem em
+             meses seguintes, então é aqui que elas aparecem. -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageMesAnterior"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/descricao_mes_anterior"
+                android:padding="4dp"
+                android:src="@drawable/ic_chevron_left" />
+
+            <TextView
+                android:id="@+id/textMesAtual"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:text="Setembro de 2026" />
+
+            <ImageView
+                android:id="@+id/imageProximoMes"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/descricao_proximo_mes"
+                android:padding="4dp"
+                android:src="@drawable/ic_chevron_right" />
+
+        </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
@@ -63,7 +107,7 @@
 
     </HorizontalScrollView>
 
-    <!-- Lista de gastos (ou mensagem de lista vazia) -->
+    <!-- Lista de gastos (ou mensagem de lista vazia) + botão de adicionar -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -74,7 +118,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
-            android:paddingBottom="16dp"
+            android:paddingBottom="88dp"
             tools:listitem="@layout/item_gasto" />
 
         <TextView
@@ -86,6 +130,17 @@
             android:textColor="@color/text_secondary"
             android:textSize="15sp"
             android:visibility="gone" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAdicionar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="20dp"
+            android:contentDescription="@string/descricao_adicionar_despesa"
+            android:src="@drawable/ic_add"
+            app:backgroundTint="@color/primary"
+            app:tint="@android:color/white" />
 
     </FrameLayout>
 

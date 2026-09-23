@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
+    android:fillViewport="true">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <!-- Cabeçalho com botão de voltar (ImageView + Intent implícito de navegação
@@ -152,6 +158,34 @@
                 android:textSize="15sp"
                 tools:text="Cartão de Débito" />
 
+            <!-- Só aparece quando o gasto é uma parcela de uma compra parcelada
+                 (Gasto.eParcelado == true). -->
+            <LinearLayout
+                android:id="@+id/containerParcela"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rotulo_parcela"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textParcela"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp"
+                    tools:text="Parcela 2 de 6" />
+
+            </LinearLayout>
+
             <!-- A observação é opcional (Gasto.observacao: String?). Quando o
                  gasto não tem observação, este bloco inteiro fica GONE. -->
             <LinearLayout
@@ -179,8 +213,25 @@
 
             </LinearLayout>
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonExcluir"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/botao_excluir_gasto"
+                android:textColor="@color/expense_value"
+                app:icon="@drawable/ic_delete"
+                app:iconTint="@color/expense_value"
+                app:strokeColor="@color/expense_value" />
+
         </LinearLayout>
 
     </LinearLayout>
 
 </LinearLayout>
+
+</ScrollView>

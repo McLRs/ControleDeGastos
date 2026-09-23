@@ -23,6 +23,12 @@
             android:exported="false"
             android:parentActivityName=".ui.list.ListaGastosActivity" />
 
+        <activity
+            android:name=".ui.add.NovaDespesaActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.list.ListaGastosActivity"
+            android:windowSoftInputMode="adjustResize" />
+
     </application>
 
 </manifest>

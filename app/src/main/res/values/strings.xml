@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Controle de Gastos</string>
     <string name="titulo_total_mes">Total do mês</string>
-    <string name="lista_vazia">Nenhum gasto nesta categoria</string>
+    <string name="lista_vazia">Nenhum gasto encontrado</string>
     <string name="rotulo_categoria">Categoria</string>
     <string name="rotulo_data">Data</string>
     <string name="rotulo_forma_pagamento">Forma de pagamento</string>
@@ -10,4 +10,37 @@
     <string name="titulo_detalhe">Detalhe do gasto</string>
     <string name="chip_todos">Todos</string>
     <string name="formato_categoria_data">%1$s • %2$s</string>
+    <string name="formato_categoria_data_parcela">%1$s • %2$s • Parcela %3$d/%4$d</string>
+
+    <!-- Navegação entre meses (tela de lista) -->
+    <string name="descricao_mes_anterior">Mês anterior</string>
+    <string name="descricao_proximo_mes">Próximo mês</string>
+
+    <!-- Tela de nova despesa -->
+    <string name="descricao_adicionar_despesa">Adicionar despesa</string>
+    <string name="titulo_nova_despesa">Nova despesa</string>
+    <string name="descricao_fechar">Fechar</string>
+    <string name="dica_descricao">Descrição</string>
+    <string name="dica_valor">Valor (R$)</string>
+    <string name="dica_data">Data</string>
+    <string name="dica_observacao">Observação (opcional)</string>
+    <string name="rotulo_compra_parcelada">Compra parcelada?</string>
+    <string name="dica_numero_parcelas">Número de parcelas</string>
+    <string name="texto_ajuda_parcelas">O valor informado acima é o valor total da compra. Ele será dividido em partes iguais entre as parcelas, uma por mês.</string>
+    <string name="botao_salvar_despesa">Salvar despesa</string>
+    <string name="erro_campo_obrigatorio">Campo obrigatório</string>
+    <string name="erro_valor_invalido">Informe um valor maior que zero</string>
+    <string name="erro_parcelas_invalido">Informe pelo menos 2 parcelas</string>
+    <string name="mensagem_despesa_adicionada">Despesa adicionada</string>
+
+    <!-- Exclusão de gastos -->
+    <string name="botao_excluir_gasto">Excluir gasto</string>
+    <string name="titulo_confirmar_exclusao">Excluir gasto?</string>
+    <string name="mensagem_confirmar_exclusao">Esta ação não pode ser desfeita.</string>
+    <string name="botao_excluir">Excluir</string>
+    <string name="botao_cancelar">Cancelar</string>
+    <string name="mensagem_gasto_removido">Gasto removido</string>
+    <string name="acao_desfazer">Desfazer</string>
+    <string name="rotulo_parcela">Parcela</string>
+    <string name="formato_parcela_detalhe">Parcela %1$d de %2$d</string>
 </resources>
