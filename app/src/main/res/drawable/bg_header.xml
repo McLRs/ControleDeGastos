@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Fundo "de marca" do cabeçalho da tela de lista: antes era um verde liso
+    (@color/primary); agora é um degradê + alguns círculos suaves e a logo
+    da carteira (ic_logo_carteira) como marca d'água, pra dar uma cara mais
+    trabalhada sem precisar de nenhuma imagem externa.
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Degradê diagonal entre as duas cores verdes já usadas no app -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="135"
+                android:type="linear"
+                android:startColor="@color/primary_dark"
+                android:endColor="@color/primary" />
+        </shape>
+    </item>
+
+    <!-- Círculo grande e suave vazando pelo canto superior direito -->
+    <item
+        android:width="180dp"
+        android:height="180dp"
+        android:top="-70dp"
+        android:end="-60dp"
+        android:gravity="top|end">
+        <shape android:shape="oval">
+            <solid android:color="#14FFFFFF" />
+        </shape>
+    </item>
+
+    <!-- Círculo menor no canto inferior esquerdo -->
+    <item
+        android:width="110dp"
+        android:height="110dp"
+        android:bottom="-45dp"
+        android:start="-40dp"
+        android:gravity="bottom|start">
+        <shape android:shape="oval">
+            <solid android:color="#0FFFFFFF" />
+        </shape>
+    </item>
+
+    <!-- Logo da carteira como marca d'água, no canto inferior direito -->
+    <item
+        android:width="92dp"
+        android:height="92dp"
+        android:bottom="-6dp"
+        android:end="10dp"
+        android:gravity="bottom|end"
+        android:drawable="@drawable/ic_logo_carteira" />
+
+</layer-list>

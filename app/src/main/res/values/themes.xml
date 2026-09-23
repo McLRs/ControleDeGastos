@@ -6,4 +6,10 @@
         <item name="android:windowBackground">@color/background</item>
         <item name="android:statusBarColor" tools:targetApi="l">@color/primary_dark</item>
     </style>
+
+    <!-- Deixa a ShapeableImageView da foto de perfil (imageAvatar) redonda -->
+    <style name="ShapeAppearanceOverlay.CircleImage" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>

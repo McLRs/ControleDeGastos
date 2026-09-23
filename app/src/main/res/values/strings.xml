@@ -15,6 +15,7 @@
     <!-- Navegação entre meses (tela de lista) -->
     <string name="descricao_mes_anterior">Mês anterior</string>
     <string name="descricao_proximo_mes">Próximo mês</string>
+    <string name="descricao_foto_perfil">Foto de perfil</string>
 
     <!-- Tela de nova despesa -->
     <string name="descricao_adicionar_despesa">Adicionar despesa</string>

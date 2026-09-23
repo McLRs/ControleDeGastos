@@ -11,19 +11,39 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary"
+        android:background="@drawable/bg_header"
         android:orientation="vertical"
         android:paddingHorizontal="20dp"
         android:paddingTop="24dp"
         android:paddingBottom="20dp">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/app_name"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageAvatar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="@string/descricao_foto_perfil"
+                android:scaleType="centerCrop"
+                android:src="@drawable/foto_perfil"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.CircleImage"
+                app:strokeColor="@android:color/white"
+                app:strokeWidth="2dp" />
+
+        </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
