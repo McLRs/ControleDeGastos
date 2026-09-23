@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.mcl.controledegastos.R
 import com.mcl.controledegastos.databinding.ItemGastoBinding
 import com.mcl.controledegastos.model.Gasto
 import com.mcl.controledegastos.ui.corResId
@@ -39,7 +40,9 @@ class GastoAdapter(
             ContextCompat.getColor(binding.root.context, gasto.categoria.corResId())
         )
         binding.textDescricao.text = gasto.descricao
-        binding.textCategoriaData.text = "${gasto.categoria.rotulo} • ${gasto.data}"
+        binding.textCategoriaData.text = binding.root.context.getString(
+            R.string.formato_categoria_data, gasto.categoria.rotulo, gasto.data
+        )
         binding.textValor.text = gasto.valor.paraMoeda()
 
         binding.root.setOnClickListener { aoClicarNoItem(gasto) }

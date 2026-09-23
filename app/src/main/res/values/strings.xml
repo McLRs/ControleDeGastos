@@ -9,4 +9,5 @@
     <string name="descricao_voltar">Voltar para a lista</string>
     <string name="titulo_detalhe">Detalhe do gasto</string>
     <string name="chip_todos">Todos</string>
+    <string name="formato_categoria_data">%1$s • %2$s</string>
 </resources>
